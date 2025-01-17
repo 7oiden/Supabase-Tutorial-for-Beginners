@@ -58,6 +58,7 @@ const Create = () => {
 
   return (
     <div className="page create">
+      {userId ? (
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
         <input
@@ -86,6 +87,9 @@ const Create = () => {
 
         {formError && <p className="error">{formError}</p>}
       </form>
+      ) : (
+      <p>Please log in to create a smoothie.</p>
+      )}
     </div>
   );
 };
